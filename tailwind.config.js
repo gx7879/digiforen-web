@@ -9,6 +9,8 @@ module.exports = {
         'primary-dark': '#009DC7',
         'primary-medium': '#21BAE3',
         'primary-light': '#EDF9FF',
+        'netural-lighter': '#DEE2EB',
+        'purple-medium': '#470781',
       },
     },
   },

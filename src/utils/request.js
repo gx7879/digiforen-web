@@ -1,5 +1,6 @@
 import axios from 'axios';
 import store from '@/store';
+import router from '@/router';
 import { getToken } from '@/utils/auth';
 
 // 创建请求实例
@@ -22,7 +23,7 @@ instance.interceptors.request.use(
      * }
      */
     if (store.getters.token) {
-      config.headers.token = JSON.parse(getToken()).token;
+      config.headers.Authorization = getToken();
     }
     return config;
   },
@@ -38,6 +39,13 @@ instance.interceptors.response.use(
      * 根据你的项目实际情况来对 response 和 error 做处理
      * 这里对 response 和 error 不做任何处理，直接返回
      */
+    if (response.data.status === 'fail') {
+      if (response.data.code === 1220) {
+        router.push('/login');
+      } else {
+        console.log(response);
+      }
+    }
     return response;
   },
   (error) => {

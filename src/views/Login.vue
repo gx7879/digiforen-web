@@ -24,6 +24,7 @@
             type="password"
             class="w-full border border-[#DEE2EB] rounded"
             placeholder="請輸入主辦單位提供的密碼"
+            @keyup.enter="login"
           />
         </label>
         <button type="button" class="bg-[#21BAE3] py-3 w-full rounded-full text-white" @click="login">登入</button>

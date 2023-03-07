@@ -14,4 +14,9 @@ export default [
     name: 'about',
     component: () => import('@/views/AboutView.vue'),
   },
+  {
+    path: '/activity/:activityId',
+    name: 'activity',
+    component: () => import('@/views/Activity.vue'),
+  },
 ];
